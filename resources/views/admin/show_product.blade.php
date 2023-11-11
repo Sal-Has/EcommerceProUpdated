@@ -62,6 +62,8 @@
             <th class="th_deg">Price</th>
             <th class="th_deg">Discount Price</th>
             <th class="th_deg">Product Image</th>
+            <th class="th_deg">Delete </th>
+            <th class="th_deg">Edit</th>
             
 
         </tr>
@@ -79,6 +81,13 @@
 
             <img class="img_size" src="/product/{{$product->image}}">
 
+            </td>
+
+            <td>
+              <a class="btn btn-danger" onclick="return confirm('Are You Sure to Delete this')" href="{{url('delete_product',$product->id)}}">Delete</a>
+            </td>
+            <td>
+              <a class="btn btn-success" href="{{url('update_product',$product->id)}}">Edit</a>
             </td>
         </tr>
 
