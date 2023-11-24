@@ -73,6 +73,8 @@
             <th>Payment Status</th>
             <th>Delivery Status</th>
             <th>Image</th>
+            <th>Delivered</th>
+            <th>Print PDF</th>
             
 
 
@@ -93,6 +95,32 @@
             <td>
                 <img class="img_size" src="/product//{{$order->image}}" alt="">
             </td>
+
+            <td>
+
+            @if($order->delivery_status=="processing")
+
+            <a href="{{url('delivered',$order->id)}}" onclick="return confirm('Are you sure product is delivered')" class="btn btn-primary" >Delivered</a>
+
+
+            @else
+
+            <p style="color: green;">Delivered</p>
+
+            @endif
+            </td>
+
+
+            <td>
+
+                <a href="{{url('print_pdf',$order->id)}}" class="btn btn-secondary">Print PDF</a>
+
+
+            </td>
+
+
+
+
             
         </tr>
 
