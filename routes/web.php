@@ -46,6 +46,23 @@ route::get('/update_product/{id}',[AdminController::class,'update_product']);
 
 route::post('/update_product_confirm/{id}',[AdminController::class,'update_product_confirm']);
 
+
+
+
+
+route::get('/order',[AdminController::class,'order']);
+
+
+
+
+
+
+
+
+
+
+
+
 route::get('/product_details/{id}',[HomeController::class,'product_details']);
 
 
@@ -58,4 +75,13 @@ route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
 
 
 route::get('/cash_order',[HomeController::class,'cash_order']);
+
+
+route::get('/stripe/{totalprice}',[HomeController::class,'stripe']);
+
+
+Route::post('stripe/{totalprice}',[HomeController::class, 'stripePost'])->name('stripe.post');
+
+
+
 
